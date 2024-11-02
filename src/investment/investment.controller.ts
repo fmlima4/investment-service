@@ -10,7 +10,7 @@ export class InvestmentController {
   @Get()
   @ApiOperation({ summary: 'Get all investments' }) 
   @ApiResponse({ status: 200, description: 'List of investments.', type: [Investment] })
-  @ApiTags('investments') // Define a tag para este controlador
+  @ApiTags('investments') 
   findAll() {
     return this.investmentService.findAll();
   }
@@ -18,7 +18,7 @@ export class InvestmentController {
   @Get(':id')
   @ApiOperation({ summary: 'Get one investment' }) 
   @ApiResponse({ status: 200, description: 'details of one investment.', type: Investment})
-  @ApiTags('investments') // Define a tag para este controlador
+  @ApiTags('investments') 
   findOne(@Param('id') id: number) {
     return this.investmentService.findOne(id);
   }
@@ -43,7 +43,7 @@ export class InvestmentController {
   })
   @ApiResponse({ status: 201, description: 'Investment created successfully.' })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiTags('investments') // Define a tag para este controlador
+  @ApiTags('investments') 
   create(@Body() investment: Investment) {
     return this.investmentService.create(investment);
   }
@@ -67,7 +67,7 @@ export class InvestmentController {
   })
   @ApiResponse({ status: 200, description: 'Investment updated successfully.' })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiTags('investments') // Define a tag para este controlador
+  @ApiTags('investments') 
   update(@Param('id') id: number, @Body() investment: Partial<Investment>) {
     return this.investmentService.update(id, investment);
   }
@@ -76,7 +76,7 @@ export class InvestmentController {
   @ApiOperation({ summary: 'delete one investment' }) 
   @ApiResponse({ status: 200, description: 'Investment deleted successfully.' })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiTags('investments') // Define a tag para este controlador
+  @ApiTags('investments') 
   remove(@Param('id') id: number) {
     return this.investmentService.remove(id);
   }
